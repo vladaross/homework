@@ -16,10 +16,10 @@
   <tbody>
     <% @account_transactions.each do |account_transaction| %>
       <tr>
-        <!-- <td><%= account_transaction.transaction_number %></td> -->
-        <td><%= account_transaction.account.amount %></td>
-        <td><%= account_transaction.account.transaction_type %></td>
-        <!-- <td><%= account_transaction.account %></td> -->
+        <td><%= account_transaction.transaction_number %></td>
+        <td><%= account_transaction.amount %></td>
+        <td><%= account_transaction.transaction_type %></td>
+        <td><%= account_transaction.account %></td>
         <td><%= link_to 'Show', account_transaction %></td>
       </tr>
     <% end %>

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <p>
+<p>
   <strong>Transaction number:</strong>
   <%= @account_transaction.transaction_number %>
-</p> -->
+</p>
 
 <p>
   <strong>Amount:</strong>
@@ -15,10 +15,10 @@
   <%= @account_transaction.transaction_type %>
 </p>
 
-<!-- <p>
+<p>
   <strong>Account:</strong>
-  <%= @account_transaction.account %>
-</p> -->
+  <%= @account_transaction.account_id %>
+</p>
 
 <%= link_to 'Edit', edit_account_transaction_path(@account_transaction) %> |
 <%= link_to 'Back', account_transactions_path %>

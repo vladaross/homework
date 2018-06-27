@@ -18,9 +18,10 @@
         <td><%= account.user.name %></td>
         <td><%= account.amount %></td>
         <td><%= account.currency %></td>
-        <td><%= link_to 'New Transaction', new_account_transaction_path(@account_transaction) %></td>  
+        <td><%= link_to 'New Transaction', new_account_transaction_path(@account_transaction) %></td>
         <td><%= link_to 'Show', account %></td>
         <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <%= link_to 'New Account Transaction', new_account_transaction_path %>
       </tr>
     <% end %>
   </tbody>
