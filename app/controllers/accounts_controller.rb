@@ -51,6 +51,21 @@ class AccountsController < AdminController
     end
   end
 
+  def deposit
+
+    Service::Deposit.new(params).call
+
+    redirect_to_root_path, notice: 'Success!'
+
+  end
+
+  def withdraw
+
+    Service::Withdraw.new(params).call
+
+    redirect_to_root_path, notice: 'Success!'
+  end
+
   # DELETE /accounts/1
   # DELETE /accounts/1.json
   def destroy

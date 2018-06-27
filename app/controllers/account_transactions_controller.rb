@@ -37,6 +37,20 @@ class AccountTransactionsController < ApplicationController
     end
   end
 
+  def deposit
+
+    Service::Deposit.new(params).deposit_transaction
+    redirect_to_root_path
+
+  end
+
+  def deposit
+
+    Service::Withdraw.new(params).withdraw_transaction
+    redirect_to_root_path
+
+  end
+
   # PATCH/PUT /account_transactions/1
   # PATCH/PUT /account_transactions/1.json
   def update

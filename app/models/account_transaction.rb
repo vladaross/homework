@@ -4,8 +4,4 @@ class AccountTransaction < ApplicationRecord
   TRANSACTION_TYPES = ["withdraw", "deposit"]
 
 
-    def to_s
-      account
-    end
-
 end
