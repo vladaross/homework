@@ -7,6 +7,7 @@ class AccountTransactionsController < ApplicationController
     @account_transactions = AccountTransaction.all
   end
 
+
   # GET /account_transactions/1
   # GET /account_transactions/1.json
   def show
@@ -14,7 +15,7 @@ class AccountTransactionsController < ApplicationController
 
   # GET /account_transactions/new
   def new
-    @account_transaction = AccountTransaction.new
+    @account_transaction = AccountTransaction.new()
   end
 
   # GET /account_transactions/1/edit
@@ -40,14 +41,14 @@ class AccountTransactionsController < ApplicationController
   def deposit
 
     Service::Deposit.new(params).deposit_transaction
-    redirect_to_root_path
+    redirect_to root_path
 
   end
 
-  def deposit
+  def withdraw
 
     Service::Withdraw.new(params).withdraw_transaction
-    redirect_to_root_path
+    redirect_to root_path
 
   end
 
@@ -80,6 +81,12 @@ class AccountTransactionsController < ApplicationController
     def set_account_transaction
       @account_transaction = AccountTransaction.find(params[:id])
     end
+
+    def connection
+      @account_transaction.account_id = @account[:id]
+    end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_transaction_params

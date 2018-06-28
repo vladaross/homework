@@ -20,7 +20,7 @@
         <td><%= account_transaction.amount %></td>
         <td><%= account_transaction.transaction_type %></td>
         <td><%= account_transaction.account %></td>
-        <td><%= link_to 'Show', account_transaction %></td>
+        <td><%= link_to 'Show', @account_transaction %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Account Transaction', new_account_transaction_path %>
+<!-- <%= link_to 'New Account Transaction', new_account_transaction_path(@account_transaction) %> -->

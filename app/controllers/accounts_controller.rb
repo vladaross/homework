@@ -55,7 +55,7 @@ class AccountsController < AdminController
 
     Service::Deposit.new(params).call
 
-    redirect_to_root_path, notice: 'Success!'
+    redirect_to root_path, notice: 'Success!'
 
   end
 
@@ -63,7 +63,7 @@ class AccountsController < AdminController
 
     Service::Withdraw.new(params).call
 
-    redirect_to_root_path, notice: 'Success!'
+    redirect_to root_path, notice: 'Success!'
   end
 
   # DELETE /accounts/1
