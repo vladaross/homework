@@ -1,10 +1,8 @@
-require 'rails_helper'
-
 describe 'api/users', type: :request do
-  let(:user) { create(:user) }
+  let(:user) { update(:user) }
 
   describe 'GET' do
-    it 'Approving response' do
+    it 'Approving response to update' do
       get 'api/users', headers: {'Authorization': "Bearer #{user.token}"}
 
       expect(response.content_type).to_eq('application.json')
