@@ -11,7 +11,7 @@ class UsersController < BaseController
   # GET /users/1
   # GET /users/1.json
   def show
-    render json: @user.to_json(only: [:id, :email])
+    render json: user, serializer: UserSerializer
   end
 
   # GET /users/new
@@ -29,7 +29,7 @@ class UsersController < BaseController
     @user = User.new(user_params)
 
       if @user.save
-        render json: user.to_json(only: [:id, :email]), status: :created
+        render json: user, serializer: UserSerializer, status: :created
       else
         render json: @user.errors, status: :unprocessable_entity
       end
@@ -39,7 +39,7 @@ class UsersController < BaseController
   # PATCH/PUT /users/1.json
   def update
       if @user.update(user_params)
-        render json: user.to_json(only: [:id, :email])
+        render json: user, serializer: UserSerializer
       else
         render json: @user.errors, status: :unprocessable_entity
       end
