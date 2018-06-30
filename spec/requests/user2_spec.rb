@@ -2,7 +2,7 @@ describe 'api/users', type: :request do
   let(:user) { destroy(:user) }
 
   describe 'GET' do
-    it 'Approving response to update' do
+    it 'Approving response to destroy' do
       get 'api/users', headers: {'Authorization': "Bearer #{user.token}"}
 
       expect(response.content_type).to_eq('application.json')
