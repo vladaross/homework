@@ -1,5 +1,6 @@
 class UsersController < AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_mobile
 
   # GET /users
   # GET /users.json

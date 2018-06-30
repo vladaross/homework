@@ -1,5 +1,6 @@
 class AccountTransactionsController < ApplicationController
   before_action :set_account_transaction, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_mobile
 
   # GET /account_transactions
   # GET /account_transactions.json

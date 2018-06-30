@@ -14,17 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-var TouchDevice = (function() {
-
-  var presence = null;
-
-  function isPresent() {
-    if (_.isNull(presence)) {
-      presence = $('body').is('.touch_device');
-    }
-    return presence;
-  }
-
-  return { isPresent: isPresent };
-
-})();
