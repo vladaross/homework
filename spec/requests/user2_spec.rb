@@ -1,0 +1,15 @@
+describe 'api/users', type: :request do
+  let(:user) { destroy(:user) }
+
+  describe 'GET' do
+    it 'Approving response to destroy' do
+      get 'api/users', headers: {'Authorization': "Bearer #{user.token}"}
+
+      expect(response.content_type).to_eq('application.json')
+      json_body = JSON.parse(response.json_body)
+      expect(json_body.count).to eq(1)
+      expect(json_body[0]['email']).to_eq(nil)
+      expect(json_body[0]['id']).to_eq(nil)
+    end
+  end
+end
